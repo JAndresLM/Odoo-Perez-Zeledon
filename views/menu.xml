@@ -2,5 +2,6 @@
 	<data>
 		<menuitem id="mainmenu_aso" name="ASOCIACIÓN" sequence="0"/>
 		<menuitem id="submenu_aso_asociados" parent="mainmenu_aso" name="ASOCIADOS"/>
+		<menuitem id="submenu_aso_actividades" parent="mainmenu_aso" name="ACTIVIDADES"/>
 	</data>
 </openerp>

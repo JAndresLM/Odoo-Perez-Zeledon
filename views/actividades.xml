@@ -58,8 +58,8 @@
 			</field>
 		</record>
 
-		<menuitem id="submenu_item_aso_asociados_actividades" name="Actividades"
-                  parent="submenu_aso_asociados"
+		<menuitem id="submenu_item_aso_actividades_actividades" name="Actividades"
+                  parent="submenu_aso_actividades"
                   action="actividades_list_action"/>
 	</data>
 </openerp>
