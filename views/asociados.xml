@@ -10,15 +10,20 @@
                      <field name="asociado"/>
                 </xpath>
                 <notebook position="inside">
-                    <page string="Actividades">
-                        <group>
-                            <field name="asociado"/>
-                        </group>
+                    <page string="Actividades del Asociado"  attrs="{'invisible': [('asociado','=',False)]}">
+                        <field name="actividades_ids">
+                            <tree string="Actividades del Asociado" editable="bottom">
+                                <field name="actividad" widget="selection"/>
+                                <field name="area"/>
+                                <field name="tenencia"/>
+                                <field name="ubicacion"/>
+                            </tree>
+                        </field>
                     </page>
                 </notebook>
             </field>
         </record>
-        
+
         <!-- *********************************************************************************** -->
         <record model="ir.ui.view" id="asociados_search_view">
           <field name="name">asociados.search</field>
