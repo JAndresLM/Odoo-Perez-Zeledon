@@ -10,7 +10,9 @@
     'version': '8.0.1',
     'depends': ['base','sale'],
     'data': [
-        
+        'views/menu.xml',
+        'views/asociados.xml',
+        'views/actividades.xml'
     ],
     'demo': [
     ],

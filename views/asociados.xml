@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <openerp>
+    <data>
+        <record model="ir.ui.view" id="partner_asociado_form_view">
+            <field name="name">partner.asociado</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="base.view_partner_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//page[@name='sales_purchases']/group/group/field[@name='customer']" position="after">
+                     <field name="asociado"/>
+                </xpath>
+                <notebook position="inside">
+                    <page string="Actividades">
+                        <group>
+                            <field name="asociado"/>
+                        </group>
+                    </page>
+                </notebook>
+            </field>
+        </record>
+        
+        <!-- *********************************************************************************** -->
+        <record model="ir.ui.view" id="asociados_search_view">
+          <field name="name">asociados.search</field>
+          <field name="model">res.partner</field>
+          <field name="arch" type="xml">
+            <search>
+              <field name="name"/>
+              <field name="asociado"/>
+              <filter name="asociados" string="Asociados"
+                domain="[('asociado', '=',True)]"/>
+            </search>
+          </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="asociados_list_action">
+            <field name="name">asociados.list</field>
+            <field name="res_model">res.partner</field>
+            <field name="view_mode">tree,form</field>
+            <field name="context" eval="{'search_default_asociados': 1}"/>
+        </record>
+
+        <menuitem id="submenu_item_aso_asociados_asociados" name="Asociados"
+                  parent="submenu_aso_asociados"
+                  action="asociados_list_action"/>
+    </data>
+</openerp>

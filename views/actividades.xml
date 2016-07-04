@@ -1,0 +1,65 @@
+<openerp>
+	<data>
+		<record model="ir.ui.view" id="actividades_form_view">
+			<field name="name">actividades.form</field>
+			<field name="model">aso.actividades</field>
+			<field name="arch" type="xml">
+				<form string="Formulario para actividades">
+					<sheet>
+						<h1>
+							<group>
+								<field name="name"/>
+							</group>
+						</h1>
+						<group>
+							<group>
+								<field name="credito_fide"/>
+								<field name="credito_abar"/>
+								<field name="credito_insu"/>
+							</group>
+							<group>
+								<field name="plazo"/>
+								<field name="tasa_anual"/>
+								<field name="precio"/>
+							</group>
+						</group>
+						<group>
+							<group>
+								<field name="create_uid" attrs="{'readonly':True}"/>
+								<field name="write_uid" attrs="{'readonly':True}"/>
+							</group>
+							<group>
+								<field name="create_date" attrs="{'readonly':True}"/>
+								<field name="write_date" attrs="{'readonly':True}"/>
+							</group>
+						</group>
+					</sheet>
+				</form>
+			</field>
+		</record>
+
+		<record model="ir.ui.view" id="actividades_tree_view">
+			<field name="name">actividades.tree</field>
+			<field name="model">aso.actividades</field>
+			<field name="arch" type="xml">
+				<tree string="Lista de Actividades">
+					<field name="name"/>
+				</tree>
+			</field>
+		</record>
+
+		<record model="ir.actions.act_window" id="actividades_list_action">
+			<field name="name">Lista de actividades</field>
+			<field name="res_model">aso.actividades</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">tree,form</field>
+			<field name="help" type="html">
+				<p class="oe_view_nocontent_create">Agregar la primera actividad</p>
+			</field>
+		</record>
+
+		<menuitem id="submenu_item_aso_asociados_actividades" name="Actividades"
+                  parent="submenu_aso_asociados"
+                  action="actividades_list_action"/>
+	</data>
+</openerp>
