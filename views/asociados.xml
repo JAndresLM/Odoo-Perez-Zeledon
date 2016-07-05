@@ -23,6 +23,28 @@
                             </tree>
                         </field>
                     </page>
+                    <page string="Datos de Crédito"  attrs="{'invisible': [('asociado','=',False)]}">
+                        <group>
+                            <group>
+                                <field name="cred_abarrotes"/>
+                                <field name="cred_insumos"/>
+                                <field name="proveedor_granos"/>
+                            </group>
+                            <group>
+                                <field name="lim_cred_abarrotes" attrs="{'readonly': [('cred_abarrotes','=',False)]}"/>
+                                <field name="lim_cred_insumos" attrs="{'readonly': [('cred_insumos','=',False)]}"/>
+                            </group>
+                        </group>
+                        <group>
+                            <field name="fiadores_ids">
+                                <tree string="Fiadores" editable="bottom">
+                                    <field name="name"/>
+                                    <field name="cedula"/>
+                                </tree>
+                            </field>
+                            <field name="vence_pagare"/>
+                        </group>
+                    </page>
                 </notebook>
             </field>
         </record>

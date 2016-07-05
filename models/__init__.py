@@ -4,3 +4,4 @@
 from . import asociados
 from . import actividades
 from . import actividades_por_asociado
+from . import fiadores

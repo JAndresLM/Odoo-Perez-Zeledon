@@ -12,7 +12,8 @@
     'data': [
         'views/menu.xml',
         'views/asociados.xml',
-        'views/actividades.xml'
+        'views/actividades.xml',
+        'views/fiadores.xml'
     ],
     'demo': [
     ],

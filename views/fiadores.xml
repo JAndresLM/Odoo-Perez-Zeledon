@@ -1,0 +1,46 @@
+<openerp>
+	<data>
+		<record model="ir.ui.view" id="fiadores_form_view">
+			<field name="name">fiadores.form</field>
+			<field name="model">aso.fiadores</field>
+			<field name="arch" type="xml">
+				<form string="Formulario para fiadores">
+					<sheet>
+						<group>
+							<field name="cedula"/>
+							<field name="name"/>
+							<field name="telefono"/>
+							<field name="correo"/>
+						</group>
+					</sheet>
+				</form>
+			</field>
+		</record>
+
+		<record model="ir.ui.view" id="fiadores_tree_view">
+			<field name="name">fiadores.tree</field>
+			<field name="model">aso.fiadores</field>
+			<field name="arch" type="xml">
+				<tree string="Lista de fiadores">
+					<field name="cedula"/>
+					<field name="name"/>
+					<field name="telefono"/>
+				</tree>
+			</field>
+		</record>
+
+		<record model="ir.actions.act_window" id="fiadores_list_action">
+			<field name="name">Lista de fiadores</field>
+			<field name="res_model">aso.fiadores</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">tree,form</field>
+			<field name="help" type="html">
+				<p class="oe_view_nocontent_create">Agregar el primer fiador</p>
+			</field>
+		</record>
+
+		<menuitem id="submenu_item_aso_fiadores_fiadores" name="Fiadores"
+                  parent="submenu_aso_fiadores"
+                  action="fiadores_list_action"/>
+	</data>
+</openerp>
