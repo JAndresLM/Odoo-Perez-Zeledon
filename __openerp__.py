@@ -14,6 +14,7 @@
         'views/asociados.xml',
         'views/actividades.xml',
         'views/fiadores.xml',
+        'views/cosechas.xml',
         'reports/report_lista_de_asociados.xml'
     ],
     'demo': [

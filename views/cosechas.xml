@@ -1,0 +1,50 @@
+<openerp>
+	<data>
+		<record model="ir.ui.view" id="cosechas_form_view">
+			<field name="name">cosechas.form</field>
+			<field name="model">aso.cosechas</field>
+			<field name="arch" type="xml">
+				<form string="Formulario para cosechas">
+					<sheet>
+						<group>
+							<group>
+								<field name="name"/>
+								<field name="active"/>
+							</group>
+							<group>
+								<field name="acta"/>
+								<field name="fecha"/>
+							</group>
+						</group>
+					</sheet>
+				</form>
+			</field>
+		</record>
+
+		<record model="ir.ui.view" id="cosechas_tree_view">
+			<field name="name">cosechas.tree</field>
+			<field name="model">aso.cosechas</field>
+			<field name="arch" type="xml">
+				<tree string="Lista de cosechas">
+					<field name="name"/>
+					<field name="acta"/>
+					<field name="fecha"/>
+				</tree>
+			</field>
+		</record>
+
+		<record model="ir.actions.act_window" id="cosechas_list_action">
+			<field name="name">Lista de cosechas</field>
+			<field name="res_model">aso.cosechas</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">tree,form</field>
+			<field name="help" type="html">
+				<p class="oe_view_nocontent_create">Agregar la primera cosecha</p>
+			</field>
+		</record>
+
+		<menuitem id="submenu_item_aso_cosechas_cosechas" name="Cosechas"
+                  parent="submenu_aso_cosechas"
+                  action="cosechas_list_action"/>
+	</data>
+</openerp>

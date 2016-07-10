@@ -4,5 +4,7 @@
 		<menuitem id="submenu_aso_asociados" parent="mainmenu_aso" name="ASOCIADOS"/>
 		<menuitem id="submenu_aso_actividades" parent="mainmenu_aso" name="ACTIVIDADES"/>
 		<menuitem id="submenu_aso_fiadores" parent="mainmenu_aso" name="FIADORES"/>
+		<menuitem id="submenu_aso_cosechas" parent="mainmenu_aso" name="COSECHAS"/>
+		<menuitem id="submenu_aso_fuentes" parent="mainmenu_aso" name="FUENTES FINANCIERAS"/>
 	</data>
 </openerp>
