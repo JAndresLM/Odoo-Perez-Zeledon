@@ -17,6 +17,7 @@
         'views/cosechas.xml',
         'views/estados.xml',
         'views/fuentes.xml',
+        'views/creditos.xml',
         'reports/report_lista_de_asociados.xml'
     ],
     'demo': [

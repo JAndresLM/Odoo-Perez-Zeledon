@@ -1,0 +1,51 @@
+<openerp>
+	<data>
+		<record model="ir.ui.view" id="creditos_form_view">
+			<field name="name">creditos.form</field>
+			<field name="model">aso.creditos</field>
+			<field name="arch" type="xml">
+				<form string="Formulario para creditos">
+					<sheet>
+						<group>
+							<group>
+								<field name="name"/>
+								<field name="asociado_id"/>
+								<field name="fuente_id"/>
+							</group>
+							<group>
+								<field name="fecha"/>
+								<field name="actividad"/>
+								<field name="fecha"/>
+							</group>
+						</group>
+					</sheet>
+				</form>
+			</field>
+		</record>
+
+		<record model="ir.ui.view" id="creditos_tree_view">
+			<field name="name">creditos.tree</field>
+			<field name="model">aso.creditos</field>
+			<field name="arch" type="xml">
+				<tree string="Lista de creditos">
+					<field name="name"/>
+					<field name="asociado_id"/>
+				</tree>
+			</field>
+		</record>
+
+		<record model="ir.actions.act_window" id="creditos_list_action">
+			<field name="name">Lista de creditos</field>
+			<field name="res_model">aso.creditos</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">tree,form</field>
+			<field name="help" type="html">
+				<p class="oe_view_nocontent_create">Agregar el primer crédito</p>
+			</field>
+		</record>
+
+		<menuitem id="submenu_item_cre_creditos_creditos" name="Créditos"
+                  parent="submenu_cre_creditos"
+                  action="creditos_list_action"/>
+	</data>
+</openerp>

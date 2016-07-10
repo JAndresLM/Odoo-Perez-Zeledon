@@ -16,7 +16,7 @@
                     <page string="Actividades del Asociado"  attrs="{'invisible': [('asociado','=',False)]}">
                         <field name="actividades_ids">
                             <tree string="Actividades del Asociado" editable="bottom">
-                                <field name="actividad" widget="selection"/>
+                                <field name="name" widget="selection"/>
                                 <field name="area"/>
                                 <field name="tenencia"/>
                                 <field name="ubicacion"/>

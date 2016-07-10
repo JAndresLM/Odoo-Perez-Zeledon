@@ -8,3 +8,4 @@ from . import fiadores
 from . import cosechas
 from . import estados
 from . import fuentes
+from . import creditos

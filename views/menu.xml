@@ -1,11 +1,13 @@
 <openerp>
 	<data>
 		<menuitem id="mainmenu_aso" name="ASOCIACIÓN" sequence="0"/>
+		<menuitem id="mainmenu_cre" name="CRÉDITOS" sequence="1"/>
 		<menuitem id="submenu_aso_asociados" parent="mainmenu_aso" name="ASOCIADOS"/>
 		<menuitem id="submenu_aso_actividades" parent="mainmenu_aso" name="ACTIVIDADES"/>
 		<menuitem id="submenu_aso_fiadores" parent="mainmenu_aso" name="FIADORES"/>
 		<menuitem id="submenu_aso_cosechas" parent="mainmenu_aso" name="COSECHAS"/>
 		<menuitem id="submenu_aso_fuentes" parent="mainmenu_aso" name="FUENTES FINANCIERAS"/>
 		<menuitem id="submenu_aso_estados" parent="mainmenu_aso" name="ESTADOS"/>
+		<menuitem id="submenu_cre_creditos" parent="mainmenu_cre" name="CRÉDITOS"/>
 	</data>
 </openerp>

@@ -18,6 +18,7 @@
                     <h1>LISTA DE ASOCIADOS</h1>
                     <ul>
                         <t t-foreach="docs" t-as="d">
+                            <!--<t t-set="asos" t-value="self.env['res.partner'].search([('asociado', '=', True)])"/>-->
                             <t t-if="d.asociado">
                                 <li><span t-field="d.name"/></li>
                             </t>     
