@@ -1,0 +1,41 @@
+<openerp>
+	<data>
+		<record model="ir.ui.view" id="estados_form_view">
+			<field name="name">estados.form</field>
+			<field name="model">aso.estados</field>
+			<field name="arch" type="xml">
+				<form string="Formulario para estados">
+					<sheet>
+						<group>
+							<field name="name"/>
+						</group>
+					</sheet>
+				</form>
+			</field>
+		</record>
+
+		<record model="ir.ui.view" id="estados_tree_view">
+			<field name="name">estados.tree</field>
+			<field name="model">aso.estados</field>
+			<field name="arch" type="xml">
+				<tree string="Lista de estados">
+					<field name="name"/>
+				</tree>
+			</field>
+		</record>
+
+		<record model="ir.actions.act_window" id="estados_list_action">
+			<field name="name">Lista de estados</field>
+			<field name="res_model">aso.estados</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">tree,form</field>
+			<field name="help" type="html">
+				<p class="oe_view_nocontent_create">Agregar el primer estado</p>
+			</field>
+		</record>
+
+		<menuitem id="submenu_item_aso_estados_estados" name="Estados"
+                  parent="submenu_aso_estados"
+                  action="estados_list_action"/>
+	</data>
+</openerp>

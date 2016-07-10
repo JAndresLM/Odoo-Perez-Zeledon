@@ -6,5 +6,6 @@
 		<menuitem id="submenu_aso_fiadores" parent="mainmenu_aso" name="FIADORES"/>
 		<menuitem id="submenu_aso_cosechas" parent="mainmenu_aso" name="COSECHAS"/>
 		<menuitem id="submenu_aso_fuentes" parent="mainmenu_aso" name="FUENTES FINANCIERAS"/>
+		<menuitem id="submenu_aso_estados" parent="mainmenu_aso" name="ESTADOS"/>
 	</data>
 </openerp>
