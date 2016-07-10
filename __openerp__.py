@@ -13,7 +13,8 @@
         'views/menu.xml',
         'views/asociados.xml',
         'views/actividades.xml',
-        'views/fiadores.xml'
+        'views/fiadores.xml',
+        'reports/report_lista_de_asociados.xml'
     ],
     'demo': [
     ],

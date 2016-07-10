@@ -1,0 +1,31 @@
+<openerp>
+<data>
+    <report
+        id="report_lista_de_asociados"
+        model="res.partner"
+        string="Lista de Asociados"
+        name="OdooPZ.report_lista_de_asociados_view"
+        file="OdooPZ.report_lista_de_asociados"
+        report_type="qweb-pdf"/>
+
+    <template id="report_lista_de_asociados_view">
+        <t t-call="report.html_container">
+            <t t-call="report.external_layout">
+                <div class="page">
+                    <style>
+                        
+                    </style>
+                    <h1>LISTA DE ASOCIADOS</h1>
+                    <ul>
+                        <t t-foreach="docs" t-as="d">
+                            <t t-if="d.asociado">
+                                <li><span t-field="d.name"/></li>
+                            </t>     
+                        </t>
+                    </ul>
+                </div>
+            </t>    
+        </t>
+    </template>
+</data>
+</openerp>
