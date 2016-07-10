@@ -5,19 +5,53 @@
 			<field name="model">aso.creditos</field>
 			<field name="arch" type="xml">
 				<form string="Formulario para creditos">
+					<header>
+						<button name="action_rechazado" type="object" string="Rechazar" states="ti" class="oe_highlight"/>
+						<button name="action_tramite_inicial" type="object" string="Valorar" states="r,a"/>
+						<button name="action_aprobado" type="object" string="Aprobar" states="ti"/>
+						<button name="action_enviado" type="object" string="Enviar" states="a"/>
+						<button name="action_desembolsado" type="object" string="Desembolsar" states="eu"/>
+						<button name="action_formalizado" type="object" string="Formalizar" states="du"/>
+						<button name="action_pago_parcial" type="object" string="Realizar Pagos" states="f"/>
+						<button name="action_cancelado" type="object" string="Cancelar" states="pp"/>
+						<field name="state" widget="statusbar"/>
+					</header>
 					<sheet>
 						<group>
 							<group>
 								<field name="name"/>
-								<field name="asociado_id"/>
-								<field name="fuente_id"/>
+								<field name="fuente_id" widget="selection"/>
+								<field name="fecha_solicitud"/>
+								<field name="actividad"/>
+								<field name="plazo"/>
+								<field name="fecha_aprobacion"/>	
 							</group>
 							<group>
-								<field name="fecha"/>
-								<field name="actividad"/>
-								<field name="fecha"/>
+								<field name="asociado_id"/>
+								<field name="solicitud_c1"/>
+								<field name="cosecha"/>
+								<field name="monto"/>
+								<field name="pagare_vigente"/>
+								<field name="fecha_vencimiento"/>
 							</group>
 						</group>
+						<group>
+							<field name="observaciones"/>
+						</group>
+						<notebook>
+                            <page string="Formulario C2">
+                            	Formulario
+                            </page>
+                            <page string="Desembolsos">
+                            	Desembolso
+                            </page>
+                            <page string="Formalizaciones">
+                            	Formalizacion
+                            </page>
+                            <page string="Pagos Realizados">
+                            	Pagos Realizados
+                            </page>
+                        </notebook>
 					</sheet>
 				</form>
 			</field>
