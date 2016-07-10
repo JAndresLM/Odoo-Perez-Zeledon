@@ -1,0 +1,41 @@
+<openerp>
+	<data>
+		<record model="ir.ui.view" id="fuentes_form_view">
+			<field name="name">fuentes.form</field>
+			<field name="model">aso.fuentes</field>
+			<field name="arch" type="xml">
+				<form string="Formulario para fuentes">
+					<sheet>
+						<group>
+							<field name="name"/>
+						</group>
+					</sheet>
+				</form>
+			</field>
+		</record>
+
+		<record model="ir.ui.view" id="fuentes_tree_view">
+			<field name="name">fuentes.tree</field>
+			<field name="model">aso.fuentes</field>
+			<field name="arch" type="xml">
+				<tree string="Lista de fuentes">
+					<field name="name"/>
+				</tree>
+			</field>
+		</record>
+
+		<record model="ir.actions.act_window" id="fuentes_list_action">
+			<field name="name">Lista de fuentes</field>
+			<field name="res_model">aso.fuentes</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">tree,form</field>
+			<field name="help" type="html">
+				<p class="oe_view_nocontent_create">Agregar la primera fuente financiera</p>
+			</field>
+		</record>
+
+		<menuitem id="submenu_item_aso_fuentes_fuentes" name="Fuentes"
+                  parent="submenu_aso_fuentes"
+                  action="fuentes_list_action"/>
+	</data>
+</openerp>
