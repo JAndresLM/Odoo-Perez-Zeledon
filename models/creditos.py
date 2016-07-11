@@ -31,27 +31,35 @@ class Creditos(models.Model):
     @api.multi
     def action_tramite_inicial(self):
     	self.state='ti'
+    
     @api.multi
     def action_aprobado(self):
     	self.state='a'
+    
     @api.multi
     def action_enviado(self):
     	self.state='eu'
+    
     @api.multi
     def action_desembolsado(self):
     	self.state='du'
+    
     @api.multi
     def action_formalizado(self):
     	self.state='f'
+    
     @api.multi
     def action_pago_parcial(self):
     	self.state='pp'
+    
     @api.multi
     def action_cancelado(self):
     	self.state='c'
+    
     @api.multi
     def action_rechazado(self):
     	self.state='r'
+    
     @api.onchange('asociado_id')
     def _get_actividades(self):
 		self.actividad = self.env['aso.actividades_por_asociado']

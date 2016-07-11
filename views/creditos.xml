@@ -6,14 +6,20 @@
 			<field name="arch" type="xml">
 				<form string="Formulario para creditos">
 					<header>
-						<button name="action_rechazado" type="object" string="Rechazar" states="ti" class="oe_highlight"/>
-						<button name="action_tramite_inicial" type="object" string="Valorar" states="r,a"/>
-						<button name="action_aprobado" type="object" string="Aprobar" states="ti"/>
-						<button name="action_enviado" type="object" string="Enviar" states="a"/>
-						<button name="action_desembolsado" type="object" string="Desembolsar" states="eu"/>
-						<button name="action_formalizado" type="object" string="Formalizar" states="du"/>
-						<button name="action_pago_parcial" type="object" string="Realizar Pagos" states="f"/>
-						<button name="action_cancelado" type="object" string="Cancelar" states="pp"/>
+						<button name="action_rechazado" type="object" string="Rechazar" states="ti"/>
+						<button name="action_tramite_inicial" type="object" string="Valorar" states="r" class="oe_highlight"/>
+						<button name="action_aprobado" type="object" string="Aprobar" states="ti" class="oe_highlight"/>
+						<button name="action_enviado" type="object" string="Enviar" states="a" class="oe_highlight"/>
+						<button name="action_tramite_inicial" type="object" string="Retroceder" states="a"/>
+						<button name="action_desembolsado" type="object" string="Desembolsar" states="eu" class="oe_highlight"/>
+						<button name="action_aprobado" type="object" string="Retroceder" states="eu"/>
+						<button name="action_formalizado" type="object" string="Formalizar" states="du" class="oe_highlight"/>
+						<button name="action_enviado" type="object" string="Retroceder" states="du"/>
+						<button name="action_pago_parcial" type="object" string="Realizar Pagos" states="f" class="oe_highlight"/>
+						<button name="action_desembolsado" type="object" string="Retroceder" states="f"/>
+						<button name="action_cancelado" type="object" string="Cancelar" states="pp" class="oe_highlight"/>
+						<button name="action_formalizado" type="object" string="Retroceder" states="pp"/>
+						<button name="action_pago_parcial" type="object" string="Retroceder" states="c"/>
 						<field name="state" widget="statusbar"/>
 					</header>
 					<sheet>
