@@ -14,7 +14,7 @@ class Creditos(models.Model):
     cosecha = fields.Many2one('aso.cosechas',string="Cosecha")
     monto = fields.Float(string="Monto")
     plazo = fields.Integer(string="Plazo (meses)")
-    pagare_vigente= fields.Boolean(string="Pagaré Vigente")
+    pagare_vigente= fields.Boolean(string="Pagaré Vigente", compute='_esta_vigente')
     fecha_aprobacion = fields.Date(string="Fecha de Aprobación")
     fecha_vencimiento = fields.Date(string="Fecha de Vencimiento")
     observaciones = fields.Text(string="Observaciones")
@@ -59,6 +59,15 @@ class Creditos(models.Model):
     @api.multi
     def action_rechazado(self):
     	self.state='r'
+
+    @api.depends('asociado_id')
+    def _esta_vigente(self):
+    	for r in self:
+			if r.asociado_id:
+				if r.asociado_id.vence_pagare:
+					inicio = fields.Datetime.from_string(r.fecha_solicitud)
+					fin = fields.Datetime.from_string(r.asociado_id.vence_pagare)
+					r.pagare_vigente = ((fin-inicio).days>0)
     
     @api.onchange('asociado_id')
     def _get_actividades(self):
@@ -67,3 +76,4 @@ class Creditos(models.Model):
 		if self.asociado_id:
 			vals['domain'] = {'actividad':[('asociado_id','=',self.asociado_id.id)]}
 		return vals
+		
