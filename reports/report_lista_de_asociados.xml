@@ -13,17 +13,35 @@
             <t t-call="report.external_layout">
                 <div class="page">
                     <style>
-                        
+                        table{
+                            font-size:16px;
+                            font-style: italic;
+                        }
+                        #trheader{
+                            border-bottom: solid black 2px;
+                            font-size:18px;
+                            font-weight:bold;
+                        }
                     </style>
-                    <h1>LISTA DE ASOCIADOS</h1>
-                    <ul>
+                    <h1>LISTA GENERAL DE ASOCIADOS</h1>
+                    <table width="100%">
+                        <tr id="trheader">
+                            <td width="35%">Nombre</td>
+                            <td width="15%">Cédula</td>
+                            <td width="15%">Teléfono</td>
+                            <td width="35%">Dirección</td>
+                        </tr>
                         <t t-foreach="docs" t-as="d">
-                            <!--<t t-set="asos" t-value="self.env['res.partner'].search([('asociado', '=', True)])"/>-->
                             <t t-if="d.asociado">
-                                <li><span t-field="d.name"/></li>
-                            </t>     
+                                <tr>
+                                    <td><span t-field="d.name"/></td>
+                                    <td><span t-field="d.cedula"/></td>
+                                    <td><span t-field="d.phone"/></td>
+                                    <td><span t-field="d.street"/></td>
+                                </tr>
+                            </t> 
                         </t>
-                    </ul>
+                    </table>
                 </div>
             </t>    
         </t>

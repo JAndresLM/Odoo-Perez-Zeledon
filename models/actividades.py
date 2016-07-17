@@ -11,4 +11,4 @@ class Actividades(models.Model):
 	credito_insu=fields.Float(string='Crédito Insumos [x Ha]')
 	plazo=fields.Float(string='Plazo [Meses]')
 	tasa_anual=fields.Float(string='Tasa Anual [%]')
-	precio=fields.Float(string='Precion [x QQ]')
+	precio=fields.Float(string='Precio [x QQ]')
