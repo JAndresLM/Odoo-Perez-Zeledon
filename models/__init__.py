@@ -9,3 +9,5 @@ from . import cosechas
 from . import estados
 from . import fuentes
 from . import creditos
+from . import pesos
+from . import pesos_lines

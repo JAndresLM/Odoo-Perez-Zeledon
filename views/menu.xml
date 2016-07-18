@@ -8,6 +8,7 @@
 		<menuitem id="submenu_aso_cosechas" parent="mainmenu_aso" name="COSECHAS"/>
 		<menuitem id="submenu_aso_fuentes" parent="mainmenu_aso" name="FUENTES FINANCIERAS"/>
 		<menuitem id="submenu_aso_estados" parent="mainmenu_aso" name="ESTADOS"/>
+		<menuitem id="submenu_aso_pesos" parent="mainmenu_aso" name="PESAR"/>
 		<menuitem id="submenu_cre_creditos" parent="mainmenu_cre" name="CRÉDITOS"/>
 	</data>
 </openerp>

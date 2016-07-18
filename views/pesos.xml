@@ -1,0 +1,72 @@
+<openerp>
+	<data>
+		<record model="ir.ui.view" id="pesos_form_view">
+			<field name="name">pesos.form</field>
+			<field name="model">aso.pesos</field>
+			<field name="arch" type="xml">
+				<form string="Formulario para hojas de peso">
+					<sheet>
+						<group>
+							<group>
+								<field name="name"/>
+								<field name="hoja_socio"/>
+								<field name="responsable"/>
+							</group>
+							<group>
+								<field name="productor"/>
+								<field name="prod_propio"/>
+								<field name="prod_sociedad"/>
+								<field name="socio" attrs="{'readonly': [('prod_sociedad','=',False)]}"/>
+								<field name="fecha"/>
+							</group>
+						</group>
+						<group>
+							<field name="producto"/>
+						</group>
+						<field name="pesos_lines_ids">
+                            <tree string="Líneas de peso" editable="bottom">
+                                <field name="humedad"/>
+                                <field name="subtotal"/>
+                                <field name="por_dano"/>
+                                <field name="merma_dano"/>
+                                <field name="por_humedad"/>
+                                <field name="merma_humedad"/>
+                                <field name="total_kg"/>
+                                <field name="total_qq"/>
+                            </tree>
+                        </field>
+						<group>
+							<field name="observaciones"/>
+						</group>
+					</sheet>
+				</form>
+			</field>
+		</record>
+
+		<record model="ir.ui.view" id="pesos_tree_view">
+			<field name="name">pesos.tree</field>
+			<field name="model">aso.pesos</field>
+			<field name="arch" type="xml">
+				<tree string="Lista de hojas de peso">
+					<field name="name"/>
+					<field name="productor"/>
+					<field name="fecha"/>
+				</tree>
+			</field>
+		</record>
+
+		<record model="ir.actions.act_window" id="pesos_list_action">
+			<field name="name">Lista de pesos</field>
+			<field name="res_model">aso.pesos</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">tree,form</field>
+			<field name="help" type="html">
+				<p class="oe_view_nocontent_create">Agregar la primera hoja</p>
+			</field>
+		</record>
+
+		<menuitem id="submenu_item_aso_pesos_pesos" name="Hojas de peso"
+                  parent="submenu_aso_pesos"
+                  action="pesos_list_action"/>
+	</data>
+</openerp>
