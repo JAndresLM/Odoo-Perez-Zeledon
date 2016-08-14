@@ -45,14 +45,16 @@
                             </tree>
                         </field>
                         <group>
+                        	<h1><group><field name="total_final_kg"/></group></h1>
+                        	<h1><group><field name="total_final_qq"/></group></h1>
+                        </group>
+                        <group>
 							<group>
-								<field name="total_final_kg"/>
-								<field name="parte" attrs="{'invisible': [('prod_sociedad','=',False)]}"/>
 								<field name="observaciones"/>
 							</group>
 							<group>
-								<field name="total_final_qq"/>
-								<field name="saldo_productor"/>
+								<field name="parte" attrs="{'invisible': [('prod_sociedad','=',False)]}"/>
+								<field name="saldo_productor" attrs="{'invisible': [('prod_sociedad','=',False)]}"/>
 								<field name="saldo_socio" attrs="{'invisible': [('prod_sociedad','=',False)]}"/>
 							</group>
 						</group>
