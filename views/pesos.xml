@@ -9,19 +9,29 @@
 						<group>
 							<group>
 								<field name="name"/>
-								<field name="hoja_socio"/>
-								<field name="responsable"/>
 							</group>
 							<group>
-								<field name="productor"/>
-								<field name="prod_propio"/>
-								<field name="prod_sociedad"/>
-								<field name="socio" attrs="{'readonly': [('prod_sociedad','=',False)]}"/>
-								<field name="fecha"/>
+								<field name="producto"/>
 							</group>
 						</group>
 						<group>
-							<field name="producto"/>
+							<group>
+								<field name="productor"/>
+								<field name="prod_sociedad"/>
+							</group>
+							<group>
+								<field name="hoja_productor"/>
+								<field name="hoja_socio" attrs="{'invisible': [('prod_sociedad','=',False)]}"/>
+								<field name="socio" attrs="{'invisible': [('prod_sociedad','=',False)]}"/>
+							</group>
+						</group>
+						<group>
+							<group>
+								<field name="responsable"/>
+							</group>
+							<group>
+								<field name="fecha"/>
+							</group>
 						</group>
 						<field name="pesos_lines_ids">
                             <tree string="Líneas de peso" editable="bottom">

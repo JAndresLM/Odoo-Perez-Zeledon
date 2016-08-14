@@ -5,7 +5,7 @@ from openerp import models, fields
 
 class Pesos_lines(models.Model):
 	_name = 'aso.pesos_lines'
-	name = fields.Many2one('aso.pesos', string="Hoja de pesos", ondelete='set null', required=True)
+	name = fields.Many2one('aso.pesos', string="Hoja de pesos", ondelete='cascade', required=True)
 	humedad = fields.Float(string="Humedad (Kg)")
 	subtotal=fields.Float(string='Subtotal (Kg)')
 	por_dano = fields.Float(string='Daño (%)')
