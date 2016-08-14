@@ -15,9 +15,9 @@ class Pesos_lines(models.Model):
 	total_kg = fields.Float(string='Total (Kg)', readonly=True, compute='_calcular_total_line')
 
 	@api.depends('subtotal','por_dano')
-	def calcular_merma_dano(self):
+	def _calcular_merma_dano(self):
 		for r in self:
-			r.merma_dano = subtotal * por_dano
+			r.merma_dano = r.subtotal * (r.por_dano/100)
 
 	@api.depends('subtotal','humedad')
 	def _calcular_por_humedad(self):
@@ -29,9 +29,9 @@ class Pesos_lines(models.Model):
 	@api.depends('subtotal','por_humedad')
 	def _calcular_merma_humedad(self):
 		for r in self:
-			r.merma_humedad = subtotal * por_humedad
+			r.merma_humedad = r.subtotal * (r.por_humedad/100)
 
 	@api.depends('subtotal','merma_humedad','merma_dano')
 	def _calcular_total_line(self):
 		for r in self:
-			r.total_kg = subtotal - merma_humedad - merma_dano
+			r.total_kg = r.subtotal - r.merma_humedad - r.merma_dano
