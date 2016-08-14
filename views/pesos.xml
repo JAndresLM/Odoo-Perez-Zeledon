@@ -35,18 +35,26 @@
 						</group>
 						<field name="pesos_lines_ids">
                             <tree string="Líneas de peso" editable="bottom">
-                                <field name="humedad"/>
                                 <field name="subtotal"/>
-                                <field name="por_dano"/>
-                                <field name="merma_dano"/>
+                                <field name="humedad"/>
                                 <field name="por_humedad"/>
                                 <field name="merma_humedad"/>
+                                <field name="por_dano"/>
+                                <field name="merma_dano"/>
                                 <field name="total_kg"/>
-                                <field name="total_qq"/>
                             </tree>
                         </field>
-						<group>
-							<field name="observaciones"/>
+                        <group>
+							<group>
+								<field name="total_final_kg"/>
+								<field name="parte" attrs="{'invisible': [('prod_sociedad','=',False)]}"/>
+								<field name="observaciones"/>
+							</group>
+							<group>
+								<field name="total_final_qq"/>
+								<field name="saldo_productor"/>
+								<field name="saldo_socio" attrs="{'invisible': [('prod_sociedad','=',False)]}"/>
+							</group>
 						</group>
 					</sheet>
 				</form>
