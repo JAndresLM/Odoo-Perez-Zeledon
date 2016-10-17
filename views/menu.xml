@@ -1,14 +1,14 @@
 <openerp>
 	<data>
 		<menuitem id="mainmenu_aso" name="ASOCIACIÓN" sequence="0"/>
-		<menuitem id="mainmenu_cre" name="CRÉDITOS" sequence="1"/>
-		<menuitem id="submenu_aso_asociados" parent="mainmenu_aso" name="ASOCIADOS"/>
-		<menuitem id="submenu_aso_actividades" parent="mainmenu_aso" name="ACTIVIDADES"/>
-		<menuitem id="submenu_aso_fiadores" parent="mainmenu_aso" name="FIADORES"/>
-		<menuitem id="submenu_aso_cosechas" parent="mainmenu_aso" name="COSECHAS"/>
-		<menuitem id="submenu_aso_fuentes" parent="mainmenu_aso" name="FUENTES FINANCIERAS"/>
-		<menuitem id="submenu_aso_estados" parent="mainmenu_aso" name="ESTADOS"/>
-		<menuitem id="submenu_aso_pesos" parent="mainmenu_aso" name="PESAR"/>
-		<menuitem id="submenu_cre_creditos" parent="mainmenu_cre" name="CRÉDITOS"/>
+		<menuitem id="mainmenu_cre" name="CRÉDITOS"/>
+		<menuitem id="submenu_cre_creditos" parent="mainmenu_aso" name="CRÉDITOS" sequence="0"/>
+		<menuitem id="submenu_aso_asociados" parent="mainmenu_aso" name="ASOCIADOS" sequence="1"/>
+		<menuitem id="submenu_aso_actividades" parent="mainmenu_aso" name="ACTIVIDADES" sequence="2"/>
+		<menuitem id="submenu_aso_fiadores" parent="mainmenu_aso" name="FIADORES" sequence="3"/>
+		<menuitem id="submenu_aso_cosechas" parent="mainmenu_aso" name="COSECHAS" sequence="4"/>
+		<menuitem id="submenu_aso_fuentes" parent="mainmenu_aso" name="FUENTES FINANCIERAS" sequence="6"/>
+		<menuitem id="submenu_aso_pesos" parent="mainmenu_aso" name="PESAR" sequence="5"/>
+		<menuitem id="submenu_aso_estados" parent="mainmenu_aso" name="ESTADOS" sequence="7"/>
 	</data>
 </openerp>

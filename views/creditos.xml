@@ -45,17 +45,28 @@
 							<field name="observaciones"/>
 						</group>
 						<notebook>
-                            <page string="Formulario C2">
+                            <page string="Saldo">
                             	Formulario
                             </page>
-                            <page string="Desembolsos">
-                            	Desembolso
-                            </page>
                             <page string="Formalizaciones">
-                            	Formalizacion
+                            	<field name="formalizaciones_ids">
+		                            <tree string="Formalizaciones" editable="bottom">
+		                                <field name="name"/>
+		                            </tree>
+		                        </field>
                             </page>
                             <page string="Pagos Realizados">
-                            	Pagos Realizados
+                            	<field name="pagos_ids">
+		                            <tree string="Pagos Realizados" editable="bottom">
+		                                <field name="name"/>
+		                                <field name="fecha_pago"/>
+		                                <field name="fecha_efectiva"/>
+		                                <field name="dias_cobrados"/>
+		                                <field name="monto_pagar"/>
+		                                <field name="forma_pago"/>
+		                                <field name="cheque"/>
+		                            </tree>
+		                        </field>
                             </page>
                         </notebook>
 					</sheet>

@@ -12,18 +12,20 @@ class Creditos(models.Model):
     actividad= fields.Many2one('aso.actividades_por_asociado',string="Actividad", domain=[('asociado_id', '=', 0)])
     solicitud_c1= fields.Char(string="N° Solicitud C1")
     cosecha = fields.Many2one('aso.cosechas',string="Cosecha")
-    monto = fields.Float(string="Monto")
-    plazo = fields.Integer(string="Plazo (meses)")
+    monto = fields.Float(string="Monto", compute='_get_monto_plazo')
+    plazo = fields.Integer(string="Plazo (meses)", compute='_get_monto_plazo')
     pagare_vigente= fields.Boolean(string="Pagaré Vigente", compute='_esta_vigente')
     fecha_aprobacion = fields.Date(string="Fecha de Aprobación")
-    fecha_vencimiento = fields.Date(string="Fecha de Vencimiento")
+    fecha_vencimiento = fields.Date(string="Fecha de Vencimiento", compute='_get_monto_plazo')
     observaciones = fields.Text(string="Observaciones")
+    formalizaciones_ids = fields.One2many('aso.formalizaciones','credito_id','Formalizaciones')
+    pagos_ids = fields.One2many('aso.pagos','credito_id','Pagos Realizados')
     state=fields.Selection([
         ('r', "Rechazado"),
         ('ti', "Trámite Inicial"),
         ('a', "Aprobado"),
-        ('eu', "Enviado a UPIAV"),
-        ('du', "Desembolsado por UPIAV"),
+        ('eu', "Enviado"),
+        ('du', "Desembolsado"),
         ('f', "Formalizado"),
         ('pp', "Pago Parcial"),
         ('c', "Cancelado"),],default='ti',string="Estado")
@@ -76,4 +78,10 @@ class Creditos(models.Model):
 		if self.asociado_id:
 			vals['domain'] = {'actividad':[('asociado_id','=',self.asociado_id.id)]}
 		return vals
+
+    @api.onchange('actividad')
+    def _get_monto_plazo(self):
+        self.monto = self.actividad.name.credito_fide * self.actividad.area
+        self.plazo = self.actividad.name.plazo
+        self.fecha_vencimiento = self.fecha_solicitud
 		

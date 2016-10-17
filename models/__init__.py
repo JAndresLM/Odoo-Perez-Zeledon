@@ -11,3 +11,5 @@ from . import fuentes
 from . import creditos
 from . import pesos
 from . import pesos_lines
+from . import formalizaciones
+from . import pagos

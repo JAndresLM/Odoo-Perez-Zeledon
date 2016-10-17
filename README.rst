@@ -9,7 +9,7 @@ Asociación de Productores Concepción
 Este módulo le permite administrar:
     * Información relacionada con
     	* Asociados
-    	* Creditos
+    	* Créditos
 
 
 Instalación
