@@ -3,7 +3,7 @@
 
 {
     'name': "Asociación de Productores Concepción",
-    'summary': """ Modificaciones adaptadas para la asociación""",
+    'summary': """ Modificaciones adaptadas para la asociación de productores Concepción""",
     'author': "Andrés López Molina",
     'website': "josandlopmol@hotmail.com",
     'category': 'Agronomía',
